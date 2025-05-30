@@ -8,9 +8,12 @@
 import SwiftUI
 
 @main
-struct PocketpackApp: App {
-    var body: some Scene {
-        WindowGroup {
+struct PocketpackApp: App
+{
+    var body: some Scene
+    {
+        WindowGroup
+        {
             ContentView()
         }
     }
