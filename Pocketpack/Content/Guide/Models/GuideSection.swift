@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Section
+struct GuideSection
 {
     let name: String
     let tileImage: String
@@ -16,28 +16,28 @@ struct Section
 
 // Note: Make topics in all 4 sections in alphabetical order.
 let wildlifeAndInsectsSection =
-Section(
+GuideSection(
     name: "Wildlife & Insects",
     tileImage: "pawprint.fill",
     topics: wildlifeAndInsectsTopics
 )
 
 let environmentalHazardsSection =
-Section(
+GuideSection(
     name: "Environmental Hazards",
     tileImage: "cloud.bolt.fill",
     topics: environmentalHazardsTopics
 )
 
 let survivalAndSafetySection =
-Section(
+GuideSection(
     name: "Survival & Safety",
     tileImage: "cross.case.fill",
     topics: survivalAndSafetyTopics
 )
 
 let practicalTipsSection =
-Section(
+GuideSection(
     name: "Practical Tips",
     tileImage: "backpack.fill",
     topics: practicalTipsTopics

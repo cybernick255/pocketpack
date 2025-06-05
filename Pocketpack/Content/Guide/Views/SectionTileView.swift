@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SectionTileView: View
 {
-    let section: Section
+    let section: GuideSection
     let geometrySize: Double
     
     var body: some View

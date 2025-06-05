@@ -13,7 +13,11 @@ struct ContentView: View
     {
         NavigationStack
         {
-            GuideTileView()
+            HStack
+            {
+                GuideTileView()
+                GearTileView()
+            }
         }
     }
 }
@@ -21,4 +25,5 @@ struct ContentView: View
 #Preview
 {
     ContentView()
+        .modelContainer(for: GearContainer.self, inMemory: true)
 }

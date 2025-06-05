@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PocketpackApp: App
@@ -16,5 +17,7 @@ struct PocketpackApp: App
         {
             ContentView()
         }
+        // Don't need to add GearItem.self since it's related to GearContainer.
+        .modelContainer(for: GearContainer.self)
     }
 }
