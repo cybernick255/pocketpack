@@ -26,7 +26,7 @@ struct GearTileView: View
             .frame(width: 120, height: 120)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.white)
+                    .fill(Color(red: 155/255, green: 199/255, blue: 119/255))
                     .shadow(
                         color: .black.opacity(0.1),
                         radius: 4
