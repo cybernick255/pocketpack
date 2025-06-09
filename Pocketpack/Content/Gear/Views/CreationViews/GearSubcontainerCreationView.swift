@@ -54,7 +54,7 @@ struct GearSubcontainerCreationView: View
                     Button(
                         action:
                             {
-                                saveSubcontainer(name: customSubcontainerName, image: "")
+                                saveSubcontainer(name: customSubcontainerName, image: "📦")
                             }
                     )
                     {

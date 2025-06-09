@@ -13,7 +13,7 @@ struct ProfileView: View
     {
         NavigationStack
         {
-            Text("")
+            ContentUnavailableView("Nothing to see here yet!", systemImage: "eyes")
                 .navigationTitle("Profile")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar

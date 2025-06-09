@@ -53,7 +53,7 @@ struct GearContainerCreationView: View
                     Button(
                         action:
                             {
-                                saveContainer(name: customContainerName, image: "")
+                                saveContainer(name: customContainerName, image: "📦")
                             }
                     )
                     {

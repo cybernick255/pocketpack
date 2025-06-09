@@ -17,13 +17,13 @@ struct ContentView: View
             {
                 HomeView()
                     .toolbarBackgroundVisibility(.visible, for: .tabBar)
-                    .toolbarBackground(Color(red: 72/255, green: 107/255, blue: 54/255), for: .tabBar)
+                    .toolbarBackground(guideSecondaryColor, for: .tabBar)
             }
             Tab("", systemImage: "person")
             {
                 ProfileView()
                     .toolbarBackgroundVisibility(.visible, for: .tabBar)
-                    .toolbarBackground(Color(red: 72/255, green: 107/255, blue: 54/255), for: .tabBar)
+                    .toolbarBackground(guideSecondaryColor, for: .tabBar)
             }
         }
     }

@@ -13,13 +13,33 @@ struct SettingsView: View
     
     var body: some View
     {
-        VStack
+        List
         {
-            Spacer()
-            Text("Version: \(appVersion)")
-                .foregroundStyle(.gray)
+            Section
+            {
+                Link(destination: URL(string: "https://github.com/cybernick255/pocketpack")!)
+                {
+                    HStack
+                    {
+                        Image("github-mark")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        Text("Open Source Code")
+                    }
+                }
+            }
+            Section
+            {
+                HStack
+                {
+                    Spacer()
+                    Text("Version: \(appVersion)")
+                        .foregroundStyle(.gray)
+                    Spacer()
+                }
+            }
+            .listRowBackground(Color.clear)
         }
-        .padding()
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
