@@ -121,10 +121,13 @@ struct GearContainerDetailView: View
                             {
                                 // Note: Make frame use GeometryReader
                                 Text(subcontainer.image)
+                                    .font(.title)
                                 Text(subcontainer.name)
                                     .font(.title)
                                     .padding(.leading)
                             }
+                            // Note: Make frame use GeometryReader
+                            .frame(height: 64)
                         }
                     }
                     .onDelete(perform: deleteGearSubcontainers)

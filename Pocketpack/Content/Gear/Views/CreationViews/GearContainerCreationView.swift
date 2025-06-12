@@ -45,11 +45,18 @@ struct GearContainerCreationView: View
                         Image(systemName: isCustomFieldsExpanded ? "chevron.up" : "chevron.down")
                     }
                 }
-                .buttonStyle(.plain)
+                .foregroundStyle(.primary)
                 
                 if isCustomFieldsExpanded
                 {
                     TextField("Name", text: $customContainerName)
+                        .onChange(of: customContainerName)
+                        { oldValue, newValue in
+                            if newValue.count > 30
+                            {
+                                customContainerName = oldValue
+                            }
+                        }
                     Button(
                         action:
                             {
@@ -59,6 +66,8 @@ struct GearContainerCreationView: View
                     {
                         Text("Save")
                     }
+                    Text("\(customContainerName.count)/30")
+                        .listRowBackground(Color.clear)
                 }
             }
             Section("Recommended")
@@ -78,7 +87,7 @@ struct GearContainerCreationView: View
                             Text("\(gearContainer.name)")
                         }
                     }
-                    .buttonStyle(.plain)
+                    .foregroundStyle(.primary)
                 }
             }
         }

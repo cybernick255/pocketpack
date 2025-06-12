@@ -46,11 +46,19 @@ struct GearSubcontainerCreationView: View
                         Image(systemName: isCustomFieldsExpanded ? "chevron.up" : "chevron.down")
                     }
                 }
-                .buttonStyle(.plain)
+                .foregroundStyle(.primary)
                 
                 if isCustomFieldsExpanded
                 {
                     TextField("Name", text: $customSubcontainerName)
+                        .onChange(of: customSubcontainerName)
+                        { oldValue, newValue in
+                            print("O: \(oldValue), N: \(newValue)")
+                            if newValue.count > 30
+                            {
+                                customSubcontainerName = oldValue
+                            }
+                        }
                     Button(
                         action:
                             {
@@ -60,6 +68,8 @@ struct GearSubcontainerCreationView: View
                     {
                         Text("Save")
                     }
+                    Text("\(customSubcontainerName.count)/30")
+                        .listRowBackground(Color.clear)
                 }
             }
             Section("Recommended")
@@ -79,7 +89,7 @@ struct GearSubcontainerCreationView: View
                             Text("\(gearSubcontainer.name)")
                         }
                     }
-                    .buttonStyle(.plain)
+                    .foregroundStyle(.primary)
                 }
             }
         }

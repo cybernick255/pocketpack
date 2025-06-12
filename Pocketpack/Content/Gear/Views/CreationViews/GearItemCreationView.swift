@@ -46,11 +46,19 @@ struct GearItemCreationView: View
                         Image(systemName: isCustomFieldsExpanded ? "chevron.up" : "chevron.down")
                     }
                 }
-                .buttonStyle(.plain)
+                .foregroundStyle(.primary)
                 
                 if isCustomFieldsExpanded
                 {
                     TextField("Name", text: $customItemName)
+                        .onChange(of: customItemName)
+                        { oldValue, newValue in
+                            print("O: \(oldValue), N: \(newValue)")
+                            if newValue.count > 30
+                            {
+                                customItemName = oldValue
+                            }
+                        }
                     Button(
                         action:
                             {
@@ -60,6 +68,8 @@ struct GearItemCreationView: View
                     {
                         Text("Save")
                     }
+                    Text("\(customItemName.count)/30")
+                        .listRowBackground(Color.clear)
                 }
             }
             Section("Recommended")
@@ -78,7 +88,7 @@ struct GearItemCreationView: View
                             Text("\(item.name)")
                         }
                     }
-                    .buttonStyle(.plain)
+                    .foregroundStyle(.primary)
                 }
             }
         }

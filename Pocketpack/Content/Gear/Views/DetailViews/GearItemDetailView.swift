@@ -13,10 +13,7 @@ struct GearItemDetailView: View
     
     var body: some View
     {
-        List
-        {
-            Text("Data for \(item.name) goes here")
-        }
+        ContentUnavailableView("Nothing to see here yet!", systemImage: "eyes")
         .navigationTitle(item.name)
         .navigationBarTitleDisplayMode(.inline)
     }

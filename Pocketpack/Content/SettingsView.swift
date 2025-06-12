@@ -30,6 +30,13 @@ struct SettingsView: View
             }
             Section
             {
+                Button(action: {sendFeedback()})
+                {
+                    Label("Feedback", systemImage: "envelope")
+                }
+            }
+            Section
+            {
                 HStack
                 {
                     Spacer()
@@ -42,6 +49,19 @@ struct SettingsView: View
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func sendFeedback()
+    {
+        let email: String = "pocketpackapp@gmail.com"
+        let subject: String = "Feedback"
+        let urlString: String = "mailto:\(email)?subject=\(subject)"
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        if let url = URL(string: urlString)
+        {
+            UIApplication.shared.open(url)
+        }
     }
 }
 
